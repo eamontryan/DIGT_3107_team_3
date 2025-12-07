@@ -20,6 +20,12 @@ public class Main {
                 case 2:
                     memberManagementMenu(scanner);
                     break;
+                case 3:
+                    bookManagementMenu(scanner);
+                    break;
+                case 4:
+                    loanManagementMenu(scanner);
+                    break;
                 case 0:
                     running = false;
                     System.out.println("\nThank you for using the Library Management System!");
@@ -38,9 +44,60 @@ public class Main {
         System.out.println("======================================");
         System.out.println("1. Queries and Reports");
         System.out.println("2. Member Management");
+        System.out.println("3. Book Management");
+        System.out.println("4. Loan Management");
         System.out.println("0. Exit");
         System.out.println("======================================");
         System.out.print("Enter your choice: ");
+    }
+
+    private static void bookManagementMenu(Scanner scanner) {
+        boolean back = false;
+        while (!back) {
+            System.out.println("\n======================================");
+            System.out.println("        BOOK MANAGEMENT");
+            System.out.println("======================================");
+            System.out.println("1. View all books");
+            System.out.println("2. Add a new book");
+            System.out.println("3. Check book availability");
+            System.out.println("0. Back to Main Menu");
+            System.out.println("======================================");
+            System.out.print("Enter your choice: ");
+
+            int choice = getIntInput(scanner);
+            switch (choice) {
+                case 1 -> BookService.viewAllBooks();
+                case 2 -> {
+                    scanner.nextLine(); // consume newline
+                    BookService.addBook(scanner);
+                }
+                case 3 -> BookService.viewBookAvailability(scanner);
+                case 0 -> back = true;
+                default -> System.out.println("Invalid choice.");
+            }
+        }
+    }
+
+    private static void loanManagementMenu(Scanner scanner) {
+        boolean back = false;
+        while (!back) {
+            System.out.println("\n======================================");
+            System.out.println("        LOAN MANAGEMENT");
+            System.out.println("======================================");
+            System.out.println("1. Borrow a book");
+            System.out.println("2. Return a book");
+            System.out.println("0. Back to Main Menu");
+            System.out.println("======================================");
+            System.out.print("Enter your choice: ");
+
+            int choice = getIntInput(scanner);
+            switch (choice) {
+                case 1 -> LoanService.borrowBook(scanner);
+                case 2 -> LoanService.returnBook(scanner);
+                case 0 -> back = true;
+                default -> System.out.println("Invalid choice.");
+            }
+        }
     }
 
     private static void queriesAndReportsMenu(Scanner scanner) {
