@@ -1,0 +1,13 @@
+# Environment variables
+.env
+
+# Compiled class files
+*.class
+
+# IDE files
+.idea/
+.vscode/
+*.iml
+.project
+.classpath
+.settings/
