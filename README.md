@@ -71,7 +71,7 @@ DIGT_3107_team_3/
    - Running on `localhost:3306`
 
 3. **MySQL JDBC Connector**
-   - Download from: https://dev.mysql.com/downloads/connector/j/
+   - Download from: https://dev.mysql.com/downloads/connector/j/ (Recommended to select 'Platform Independent')
    - Or use Maven/Gradle to manage dependencies
 
 ---
@@ -162,8 +162,8 @@ The application automatically loads configuration from `.env` on startup. No cod
    - File → Open → Select project folder
 
 2. **Add MySQL Connector to Build Path**
-   - Right-click project → Build Path → Add External JARs
-   - Select `mysql-connector-java-8.x.x.jar`
+   - File → Project Structure → Libraries → + icon
+   - Add `mysql-connector-java-8.x.x.jar`
 
 3. **Run Main.java**
    - Right-click `Main.java` → Run As → Java Application
