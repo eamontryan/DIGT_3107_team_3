@@ -221,12 +221,12 @@ The application automatically loads configuration from `.env` on startup. No cod
 - Option 1: View all books  
 - Option 2: Add a new book  
 - Option 3: Check book availability & circulation  
-- Option 0: Back to Main Menu  
+- Option 0: Return to Main Menu  
 
 ### Loan Management Menu
 - Option 1: Borrow a book  
 - Option 2: Return a book  
-- Option 0: Back to Main Menu  
+- Option 0: Return to Main Menu 
 
 ---
 
