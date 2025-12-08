@@ -12,12 +12,12 @@ A Java console application for managing library management operations.
 DIGT_3107_team_3/
 │
 ├── src/
-│   ├── Main.java              # Entry point with menu system
-│   ├── Database.java          # JDBC connection management
-│   ├── QueryService.java      # Queries and reports functionality
+│   ├── Main.java              # Entry point with console menu system
+│   ├── Database.java          # JDBC connection + environment loader
+│   ├── QueryService.java      # Queries and reporting functionality
 │   ├── MemberService.java     # Member management operations
-│   ├── BookService.java       # (For future phases)
-│   └── LoanService.java       # (For future phases)
+│   ├── BookService.java       # Book lookup and stock utility functions
+│   └── LoanService.java       # Borrowing, returning and fine calculation logic
 │
 ├── create_tables.sql          # Database schema
 ├── insert_data.sql            # Sample data
@@ -57,6 +57,21 @@ DIGT_3107_team_3/
 - View member loan history
 - Delete member
 - Track all books borrowed and returned
+
+### Book Management 
+- View all books
+- Add new books with category selection
+- Track book stock availability (total vs available copies)
+- View circulation history + system check for stock mismatch
+
+### Loan Management 
+- Borrow books (automatically assigns 15-day return date)
+- Prevent borrowing if no available copies
+- Record loans + loan item entries
+- Return books and update fines
+- Auto-calculate penalties ($10 per overdue day)
+- Increment/decrement availability
+- Validate member and book existence
 
 ---
 
@@ -180,6 +195,8 @@ The application automatically loads configuration from `.env` on startup. No cod
 ======================================
 1. Queries and Reports
 2. Member Management
+3. Book Management
+4. Loan Management
 0. Exit
 ======================================
 ```
@@ -191,6 +208,7 @@ The application automatically loads configuration from `.env` on startup. No cod
 - Option 4: View specific member's complete borrowing history
 - Option 5: See books due within next 3 days
 - Option 6: Find books that have never been borrowed
+- Option 0: Return to Main Menu
 
 ### Member Management Menu
 - Option 1: Register new library members
@@ -199,6 +217,18 @@ The application automatically loads configuration from `.env` on startup. No cod
 - Option 4: Update member contact info
 - Option 5: View member's borrowing history
 - Option 6: Remove member from system
+- Option 0: Return to Main Menu
+
+### Book Management Menu
+- Option 1: View all books  
+- Option 2: Add a new book  
+- Option 3: Check book availability & circulation  
+- Option 0: Back to Main Menu  
+
+### Loan Management Menu
+- Option 1: Borrow a book  
+- Option 2: Return a book  
+- Option 0: Back to Main Menu  
 
 ---
 
