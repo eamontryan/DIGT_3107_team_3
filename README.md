@@ -16,8 +16,8 @@ DIGT_3107_team_3/
 │   ├── Database.java          # JDBC connection management
 │   ├── QueryService.java      # Queries and reports functionality
 │   ├── MemberService.java     # Member management operations
-│   ├── BookService.java       # (For future phases)
-│   └── LoanService.java       # (For future phases)
+│   ├── BookService.java       # Book management
+│   └── LoanService.java       # Handles borrowing and returning logic
 │
 ├── create_tables.sql          # Database schema
 ├── insert_data.sql            # Sample data
