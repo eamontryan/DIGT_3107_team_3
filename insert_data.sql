@@ -75,7 +75,7 @@ INSERT INTO book (book_id, title, author, total_copies, available_copies, catego
 (9, 'Revolutionary Leaders', 'David Wilson', 5, 4, 2),
 (10, 'Historical Wonders', 'Susan Lee', 5, 3, 2),
 (11, 'Pride and Prejudice', 'Jane Austen', 5, 4, 3),
-(12, 'The Great Gatsby', 'F. Scott Fitzgerald', 5, 3, 3),
+(12, 'The Great Gatsby', 'F. Scott Fitzgerald', 5, 5, 3),
 (13, 'To Kill a Mockingbird', 'Harper Lee', 5, 2, 3),
 (14, '1984', 'George Orwell', 5, 4, 3),
 (15, 'Moby Dick', 'Herman Melville', 5, 3, 3);
