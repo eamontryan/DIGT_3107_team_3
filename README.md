@@ -64,7 +64,7 @@ DIGT_3107_team_3/
 - Track book stock availability (total vs available copies)
 - View circulation history + system check for stock mismatch
 
-### Borrowing & Loan Management 
+### Loan Management 
 - Borrow books (automatically assigns 15-day return date)
 - Prevent borrowing if no available copies
 - Record loans + loan item entries
