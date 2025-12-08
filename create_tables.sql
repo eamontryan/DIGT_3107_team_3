@@ -5,7 +5,7 @@ USE Library_Management;
 -- Create Database User
 -- =========================
 -- Create user with a strong random password
-CREATE USER IF NOT EXISTS 'test_user'@'localhost' IDENTIFIED BY 'Lb#9mK$2pQxR7wN4';
+CREATE USER IF NOT EXISTS 'test_user'@'localhost' IDENTIFIED BY 'Lb9mK$2pQxR7wN4';
 
 -- Grant necessary privileges on Library_Management database
 GRANT SELECT, INSERT, UPDATE, DELETE ON Library_Management.* TO 'test_user'@'localhost';

@@ -10,11 +10,27 @@ public class MemberService {
         System.out.print("Enter member name: ");
         String name = scanner.nextLine();
 
-        System.out.print("Enter phone number: ");
-        String phoneNumber = scanner.nextLine();
+        // Validate phone number (10 digits)
+        String phoneNumber;
+        while (true) {
+            System.out.print("Enter phone number (10 digits): ");
+            phoneNumber = scanner.nextLine();
+            if (phoneNumber.matches("\\d{10}")) {
+                break;
+            }
+            System.err.println("Error: Phone number must be exactly 10 digits. Please try again.");
+        }
 
-        System.out.print("Enter library card number: ");
-        String cardNumber = scanner.nextLine();
+        // Validate card number (14 digits)
+        String cardNumber;
+        while (true) {
+            System.out.print("Enter library card number (14 digits): ");
+            cardNumber = scanner.nextLine();
+            if (cardNumber.matches("\\d{14}")) {
+                break;
+            }
+            System.err.println("Error: Card number must be exactly 14 digits. Please try again.");
+        }
 
         String query = "INSERT INTO member (name, phone_number, card_number) VALUES (?, ?, ?)";
 
@@ -143,13 +159,35 @@ public class MemberService {
             String newName = scanner.nextLine();
             if (newName.isEmpty()) newName = rs.getString("name");
 
-            System.out.print("New phone number: ");
-            String newPhone = scanner.nextLine();
-            if (newPhone.isEmpty()) newPhone = rs.getString("phone_number");
+            // Validate phone number (10 digits)
+            String newPhone;
+            while (true) {
+                System.out.print("New phone number (10 digits): ");
+                newPhone = scanner.nextLine();
+                if (newPhone.isEmpty()) {
+                    newPhone = rs.getString("phone_number");
+                    break;
+                }
+                if (newPhone.matches("\\d{10}")) {
+                    break;
+                }
+                System.err.println("Error: Phone number must be exactly 10 digits. Please try again.");
+            }
 
-            System.out.print("New card number: ");
-            String newCardNumber = scanner.nextLine();
-            if (newCardNumber.isEmpty()) newCardNumber = rs.getString("card_number");
+            // Validate card number (14 digits)
+            String newCardNumber;
+            while (true) {
+                System.out.print("New card number (14 digits): ");
+                newCardNumber = scanner.nextLine();
+                if (newCardNumber.isEmpty()) {
+                    newCardNumber = rs.getString("card_number");
+                    break;
+                }
+                if (newCardNumber.matches("\\d{14}")) {
+                    break;
+                }
+                System.err.println("Error: Card number must be exactly 14 digits. Please try again.");
+            }
 
             String updateQuery = "UPDATE member SET name = ?, phone_number = ?, card_number = ? WHERE member_id = ?";
             try (PreparedStatement updateStmt = conn.prepareStatement(updateQuery)) {

@@ -106,8 +106,6 @@ DIGT_3107_team_3/
    mysql -u root -p < create_tables.sql
    mysql -u root -p < insert_data.sql
    # OR
-   mysql -u root -p < phase3_sample_data.sql
-   # OR
    Just populate through the MySQL Workbench UI
    ```
 
@@ -124,8 +122,9 @@ DIGT_3107_team_3/
    ```properties
    DB_URL=jdbc:mysql://localhost:3306/Library_Management
    DB_USER=test_user
-   DB_PASSWORD=Lb#9mK$2pQxR7wN4 (default - if you use a different one make sure to update create_tables.sql)
+   DB_PASSWORD=Lb9mK$2pQxR7wN4 (default user and password in create_tables.sql)
    ```
+   **Note**: You may also use your own root username and password to access the database as well.
 
 4. **Verify Database**
    ```sql
@@ -183,7 +182,6 @@ The application automatically loads configuration from `.env` on startup. No cod
 3. **Run Main.java**
    - Right-click `Main.java` → Run As → Java Application
 
-```
 ---
 
 ## Usage
